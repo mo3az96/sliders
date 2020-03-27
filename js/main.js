@@ -26,7 +26,7 @@ $(document).ready(function () {
         },
         breakpoints: {
             500: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
             },
             991: {
                 slidesPerView: 3.5,
@@ -51,7 +51,7 @@ $(document).ready(function () {
         },
         breakpoints: {
             500: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 0,
             },
             991: {
@@ -59,4 +59,53 @@ $(document).ready(function () {
             },
         },
     });
+
+    var firstWidth = $('.first-slider .swiper-slide:not(.swiper-slide-duplicate)').length * 50
+    var winWidth = $(window).width()
+
+    if (firstWidth >= 850) {
+        $(".first-slider .swiper-pagination-progressbar").css("width", "850px");
+    } else {
+        $(".first-slider .swiper-pagination-progressbar").css("width", firstWidth + "px");
+    }
+
+    if ($(window).width() <= 991) {
+        if (firstWidth >= 500) {
+            $(".first-slider .swiper-pagination-progressbar").css("width", "500px");
+        } else {
+            $(".first-slider .swiper-pagination-progressbar").css("width", firstWidth + "px");
+        }
+    };
+    if ($(window).width() <= 767) {
+        if (firstWidth >= winWidth) {
+            $(".first-slider .swiper-pagination-progressbar").css("width", "100%");
+        } else {
+            $(".first-slider .swiper-pagination-progressbar").css("width", firstWidth + "px");
+        }
+    };
+
+
+    var secWidth = $('.sec-slider .swiper-slide:not(.swiper-slide-duplicate)').length * 50
+    var winWidth = $(window).width()
+
+    if (secWidth >= 850) {
+        $(".sec-slider .swiper-pagination-progressbar").css("width", "850px");
+    } else {
+        $(".sec-slider .swiper-pagination-progressbar").css("width", secWidth + "px");
+    }
+
+    if ($(window).width() <= 991) {
+        if (secWidth >= 500) {
+            $(".sec-slider .swiper-pagination-progressbar").css("width", "500px");
+        } else {
+            $(".sec-slider .swiper-pagination-progressbar").css("width", firstWidth + "px");
+        }
+    };
+    if ($(window).width() <= 767) {
+        if (secWidth >= winWidth) {
+            $(".sec-slider .swiper-pagination-progressbar").css("width", "100%");
+        } else {
+            $(".sec-slider .swiper-pagination-progressbar").css("width", secWidth + "px");
+        }
+    };
 });

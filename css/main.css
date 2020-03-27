@@ -128,4 +128,8 @@ html[dir=rtl] .arrows {
     .arrows {
         display: none;
     }
+
+    .slider-tools {
+        justify-content: center;
+    }
 }
