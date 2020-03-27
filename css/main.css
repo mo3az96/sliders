@@ -1,0 +1,131 @@
+body {
+    background-color: #ccc;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+.main-img {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 5s;
+}
+
+.swiper-slide-duplicate-active .main-img img,
+.swiper-slide-active .main-img img {
+    transform: scale(1.1);
+    transition: 20s;
+}
+
+.item {
+    height: 400px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.first-slider .item {
+    filter: grayscale(1) blur(1px);
+}
+
+.sec-slider .item {
+    transform: scale(0.90);
+    filter: grayscale(1) blur(1px);
+}
+
+.first-slider .swiper-slide-next .item,
+.first-slider .swiper-slide-active .item,
+.first-slider .swiper-slide-prev .item {
+    filter: none;
+}
+
+.sec-slider .swiper-slide-active .item {
+    transform: none;
+    filter: none;
+}
+
+.slider-tools {
+    width: 100%;
+    display: flex;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.swiper-pagination-progressbar {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    height: 3px;
+    width: 850px;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: chocolate;
+}
+
+.arrows {
+    display: flex;
+}
+
+html[dir=rtl] .arrows {
+    flex-direction: row-reverse;
+}
+
+.swiper-btn {
+    background: none;
+    position: static;
+    width: auto;
+    height: auto;
+    outline: none !important;
+    box-shadow: none !important;
+    margin: 0 5px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.swiper-btn:hover {
+    color: chocolate;
+}
+
+@media (max-width: 991px) {
+    .swiper-pagination-progressbar {
+        width: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-img {
+        height: 350px;
+    }
+
+    .swiper-pagination-progressbar {
+        width: 500px;
+    }
+
+    .first-slider .swiper-slide-next .item,
+    .first-slider .swiper-slide-prev .item {
+        filter: grayscale(1) blur(1px);
+    }
+
+    .swiper-pagination-progressbar {
+        width: 100%;
+    }
+
+    .arrows {
+        display: none;
+    }
+}
